@@ -1,0 +1,24 @@
+$lightBgColor: #24baef;
+.bg-light {
+    background-color: transparent !important;
+}
+
+.navbar {
+    color: white !important;
+}
+
+.navbar-light,
+.nav-link {
+    color: white !important;
+}
+
+ul li a {
+    font-size: 1.4rem !important;
+    float: right !important;
+}
+
+.logo {
+    color: $lightBgColor;
+    opacity: .8;
+    text-shadow: 2px 1px $lightBgColor;
+}

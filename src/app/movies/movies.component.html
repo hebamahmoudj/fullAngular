@@ -1,0 +1,20 @@
+<div class="container py-4">
+    <div class="row">
+        <div class="col-md-4 d-flex align-items-center">
+
+            <h2>Trending Movies
+                <br> Right Now
+            </h2>
+        </div>
+        <div *ngFor="let m of moviesData" class="col-md-2 position-relative">
+
+            <a [routerLink]="['/moviedetails',m.id]">
+                <div class=" movie py-1"><img [src]="base_url+m.poster_path" class="w-100">
+                    <h5 class="p-1">{{m.title}}</h5>
+                </div>
+                <div class="vote">{{m.vote_average}}</div>
+            </a>
+        </div>
+
+    </div>
+</div>

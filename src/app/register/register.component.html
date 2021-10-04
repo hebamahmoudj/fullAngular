@@ -1,0 +1,45 @@
+<div *ngIf="err" class="alert alert-danger m-auto text-center">{{err}}</div>
+
+<form [formGroup]="regesterForm" class="w-50 m-auto py-4 mt-5 " (ngSubmit)="onSubmit(regesterForm)">
+    <div class="formGroup">
+
+        <label>firstName:</label>
+        <input [class.is-invalid]='regesterForm.controls[ "first_name"].invalid == true && regesterForm.controls[ "first_name"].touched == true ' [class.is-valid]='regesterForm.controls[ "first_name"].invalid == false && regesterForm.controls[ "first_name"].touched == true '
+            type="text" formControlName="first_name" class="form-control">
+        <span class="m-3 p-2 text-danger d-block" *ngIf='regesterForm.controls["first_name"].invalid == true && regesterForm.controls["first_name"].touched == true '>firstName is not valid</span>
+    </div>
+
+
+    <div class="formGroup">
+        <label>lastName:</label>
+        <input [class.is-invalid]='regesterForm.controls[ "last_name"].invalid == true && regesterForm.controls[ "last_name"].touched == true ' [class.is-valid]='regesterForm.controls[ "last_name"].invalid == false && regesterForm.controls[ "last_name"].touched == true '
+            type="text" formControlName="last_name" class="form-control">
+        <span class="m-3 p-2 text-danger d-block" *ngIf='regesterForm.controls["last_name"].invalid == true && regesterForm.controls["last_name"].touched == true '>lastName is not valid</span>
+    </div>
+
+    <div class="formGroup">
+
+        <label>Age:</label>
+        <input [class.is-invalid]='regesterForm.controls[ "age"].invalid == true && regesterForm.controls[ "age"].touched == true ' [class.is-valid]='regesterForm.controls[ "age"].invalid == false && regesterForm.controls[ "age"].touched == true ' type="number"
+            formControlName="age" class="form-control">
+        <span class="m-3 p-2 text-danger d-block" *ngIf='regesterForm.controls["age"].invalid == true && regesterForm.controls["age"].touched == true '>age is not valid</span>
+    </div>
+
+
+    <div class="formGroup">
+        <label>E-mail</label>
+        <input [class.is-invalid]='regesterForm.controls[ "email"].invalid == true && regesterForm.controls[ "email"].touched == true ' [class.is-valid]='regesterForm.controls[ "email"].invalid == false && regesterForm.controls[ "email"].touched == true ' type="email"
+            formControlName="email" class="form-control">
+        <span class="m-3 p-2 text-danger d-block" *ngIf='regesterForm.controls["email"].invalid == true && regesterForm.controls["email"].touched == true '>email is not valid</span>
+    </div>
+
+    <div class="formGroup">
+        <label>password:</label>
+        <input [class.is-invalid]='regesterForm.controls[ "password"].invalid == true && regesterForm.controls[ "password"].touched == true ' [class.is-valid]='regesterForm.controls[ "password"].invalid == false && regesterForm.controls[ "password"].touched == true '
+            type="password" formControlName="password" class="form-control">
+        <span class="m-3 p-2 text-danger d-block" *ngIf='regesterForm.controls[ "password"].invalid==true && regesterForm.controls[ "password"].touched==true '>password is not valid</span>
+    </div>
+    <div class="formGroup mt-3">
+        <button class="btn btn-primary " [disabled]="regesterForm.invalid == true">register</button>
+    </div>
+</form>

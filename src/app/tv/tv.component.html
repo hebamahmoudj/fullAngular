@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 d-flex align-items-center">
+
+            <h2>Trending Tv
+                <br> Right Now
+            </h2>
+        </div>
+        <div *ngFor="let tv of tvData" class="col-md-2 position-relative">
+            <div class=" tv py-1"><img [src]="base_url+tv.poster_path" class="w-100">
+                <h5 class="p-1">{{tv.name}}</h5>
+            </div>
+            <div class="vote">{{tv.vote_average}}</div>
+        </div>
+
+    </div>
+</div>

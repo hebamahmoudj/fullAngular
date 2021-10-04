@@ -1,0 +1,20 @@
+
+
+@import "~bootstrap/scss/bootstrap";
+
+$fontFamily:'segoe ui light';
+$mainColor:#F8F8F8;
+$secondColor:#ef4836;
+$darkColor:#212121;
+$boxShadow:0 5px 13px 0px rgba(0, 0, 0, 0.1);
+$bgcolor:#131722;
+$fontcolor:#fff;
+$lightBgColor:#24baef;
+body{
+    background-color:$bgcolor;
+    color:$fontcolor;
+}
+.btn-mine{
+    background-color:$lightBgColor;
+    color:$fontcolor;
+}

@@ -1,0 +1,50 @@
+<!-- <button class="btn btn-primary" type="button" disabled>
+    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    <span class="visually-hidden">Loading...</span>
+  </button> -->
+<div *ngIf="isLoading == false" class="d-flex align-items-center justify-content-center mt-5 m-auto" id="isloading">
+    <button class="btn btn-secondary " type="button" disabled>
+    <span class="spinner-border spinner-border-md" role="status" aria-hidden="true"></span>
+    Loading...
+  </button>
+</div>
+
+<div class="container" *ngIf="isLoading == true">
+    <div class="row py-4">
+        <div class="col-md-9">
+            <img [src]="base_url+movieDetail.backdrop_path" class="w-100" alt="">
+            <div class="text-center text-light w-75 m-auto">
+
+                <h3>{{movieDetail.original_title}}</h3>
+                <p class=" lead ">{{movieDetail.overview}}</p>
+            </div>
+        </div>
+
+        <div class="col-md-3 ">
+
+            <h5 class="text-center bg-secondary p-2  mt-3   d-flex justify-content-start align-items-start">top ten trending Movies</h5>
+
+            <div class="row justify-content-start flexwrap-wrap">
+                <div *ngFor="let movie of toptenmovies" class="mb-3 " id="movie">
+                    <!-- <a [routerLink]="['/moviedetails',movie.id]"> -->
+                    <div class="col-md-7 ">
+
+                        <img [src]="base_url+movie.poster_path" class="w-100 " alt="">
+
+                    </div>
+
+                    <div class="col-md-3 text-center">
+                        <p class="lead text-center"> {{movie.original_title}} </p>
+                        <p class="lead text-center">{{movie.release_date}}</p>
+                    </div>
+                    <!-- </a> -->
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
